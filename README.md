@@ -24,13 +24,15 @@ A simple Node.js tool to check domain availability using the GoDaddy API. Perfec
 ## Usage
 
 ```bash
-node lookup.js <number_of_letters> <tlds>
+node lookup.js <number_of_letters> <tlds> [--to <max_price>] [-v]
 ```
 
 ### Parameters
 
 - `<number_of_letters>` - Length of domain combinations to generate (e.g., 3 for "abc", "xyz")
 - `<tlds>` - (Optional) Comma-separated list of TLDs to check (default: `.com`)
+- `--to <max_price>` - (Optional) Maximum price to include in results (default: no limit)
+- `-v` - (Optional) Verbose mode to show more detailed output
 
 ### Examples
 
@@ -52,6 +54,18 @@ node lookup.js 3 .com,.io,.dev
 node lookup.js 4 .app
 ```
 
+**Check 3-letter .com domains with a maximum price of $100:**
+
+```bash
+node lookup.js 3 .com --to 100
+```
+
+**Check 3-letter .com domains with verbose mode:**
+
+```bash
+node lookup.js 3 .com -v
+```
+
 ## Output
 
 - Real-time console output showing availability status
@@ -64,7 +78,7 @@ node lookup.js 4 .app
 }
 ```
 
-### Example Output
+### Example Outputs
 
 ```
 🧩 Config: 3-letter combos | TLDs: .com, .io
